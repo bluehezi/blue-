@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="./blue.js"></script>
+    <!--<script src="./Animate.js"></script>-->
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /*div {
+            display: none;
+        }*/
+        
+        body {
+            height: 2000px;
+        }
+        
+        .div {
+            position: relative;
+            padding: 20px;
+            background-color: black;
+        }
+        
+        .click {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .div1 {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        
+        .div2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        
+        .div3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        
+        .test {
+            width: 50px;
+            height: 60px;
+            overflow: scroll;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #e92322;
+            position: absolute;
+        }
+        
+        .container {
+            border: 1px solid #666;
+            position: relative;
+            height: 300px;
+        }
+        
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            clear: both;
+        }
+
+         li {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--<div id='click' class="click">
+    </div>-->
+
+    <!--<a href="http://www.baidu.com" id='baidu'>百度一下</a>-->
+    <!--<div class="div">
+        <div class="div1" id='div1'>
+            <div class="div2" id='div2'>
+                <div class="div3" id='div3'></div>
+                <div class="div2">ooooo</div>
+            </div>
+        </div>
+    </div>
+
+    <p>test</p>
+    <div class="div1" id='t1' data-name='ooo' name='lalaal'>
+        <div class="div2" id='t2'>
+            <div class="div3" id='t3'></div>
+            <div class="div2">ooooo</div>
+        </div>
+    </div>
+
+    <div class="test">
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    </div>
+    <button id='show'>显示</button>
+    <button id='hide'>隐藏</button>
+
+    <input type="text" value='名词'/>-->
+    <script>
+        // var i = 0;
+        // blue.event.on(/*'click'*/ document.getElementById('click'),'click',function(){
+        //     this.style.backgroundColor = ['blue','green'][i%2];
+        //     i++;
+        //     blue.event.un('click','click',arguments.callee);    
+        // });
+
+        // blue.click('click',function(){
+        //      this.style.backgroundColor = ['blue','green'][i%2];
+        //     i++;
+        //     blue.unclick('click',arguments.callee);   
+        // });
+
+        // blue.click('baidu',function(event){
+        //     blue.preventDefault(event);   // 阻止默认行为
+        // });
+
+        // blue.click('div1',function(event){
+        //     console.log('div1');
+        // });
+
+        // blue.click('div2',function(event){
+        //         console.log('div2');
+        // });
+        // blue.click('div3',function(event){
+        //     console.log('div3');
+        //     blue.stopPropagation(event);  // 阻止冒泡
+        // });
+
+        // console.log(blue.class('div2'));
+        // console.log(blue.classLimit('div2','div2'));
+        // console.log(blue.classLimit('div2'));
+        // console.log(blue.group('#div1,.div2'));
+        // console.log(blue.layer('#div1 .div2 .div2 .div4'));
+        // console.log(document.querySelectorAll('.div1 .div2'));
+        // console.log(blue.classLimit('div2',blue.class('div1')[0]));
+        // blue.layer('.div1 .div2').forEach(function(v,i){
+        //     v.style.backgroundColor = '#e92312';
+        // });
+
+        // console.log(blue.groupLayer('#div1,.div2,#div1 .div2 .div2 '));
+    //     // console.log(blue.classLimit('div1','div1'));
+    //     console.log(blue.noRepeat([1,1,2,1,4,6,4]));
+    //     console.log(blue.all('#div1'));
+    //     console.log(blue.attr('#t1','data-name'));
+    //     console.log(blue.attr('div','name','aaa'));
+    //     console.log(blue.position('div2'));
+
+    //     blue.on('show','click',function(event){
+    //         // blue.show('div');
+    //         // blue.addClass('div','show');
+    //         blue.toggleHS('div');
+    //     });
+    //     blue.on('hide','click',function(event){
+    //         // blue.hide('div');
+    //         // blue.removeClass('div','show');
+    //         blue.toggleClass('div','hide');
+    //         // blue.addClass('div','hide');
+    //     });
+        
+    //     console.log(blue.css('#t1','display'));
+    //     console.log(blue.value('input','000'));
+    //     console.log(blue.html('#t1'));
+    </script>
+
+    <!--<script>
+        function Person(){
+            this.name = 'linge';
+            this.age = '16';
+            this.show = function(){
+                console.log(this.name,this.age);
+            }
+        }
+        var p = new Person();
+        var t = {};
+        blue.extend(t,p);
+        t.show();
+        console.log(t);
+        console.log(blue.rtrim('hello world   '));
+        console.log(blue.isString('hello'));
+        console.log(blue.isString(new String('hello')));
+        console.log(blue.isString(1));
+        console.log(blue.isArray([]));
+        console.log('    hello world     ');
+        console.log(blue.trim('    hello world     '));
+        console.log(blue.ltrim('    hello world     '));
+        console.log(blue.rtrim('    hello world     '));
+        console.log(blue.isNaN(1));
+        console.log(blue.isNaN('a'));
+        console.log(blue.isFinite(1));
+    </script>-->
+
+    <div class="container clearfix">
+        <input id='start' type="button" value="Start" />
+        <div class="box" id='box'></div>
+        <div class="box" id='box1'></div>
+        <div class="box" id='box2'></div>
+
+    </div>
+
+    <ul id='uul'>
+        <li class='lili ii'>1</li>
+        <li class='lili ii'>2</li>
+        <li class='lili ii'>3</li>
+        <li class='lili ii'>4</li>
+        <li class='lili ii'>5</li>
+    </ul>
+
+    <script>
+        
+        !function(document,window){
+            blue.on('start','click',function(){
+            //    new Animate().add(document.body,function(dom,tween){
+            //         dom.scrollTop = 1000*tween;
+            //     },2000,function(){
+            //         console.log('1');
+            //     });
+            
+                blue.animate.clear();
+            });
+
+            blue.animate.add('box',
+                {
+                    'left':500,
+                    width:300,
+                    height:200,
+                    opacity:0.2
+                },
+                2000,
+                function(){
+                    console.log('end');
+                });
+
+               blue.animate.add('box1',
+                    {
+                        'left':500,
+                        width:200,
+                        height:300,
+                        opacity:0.2
+                    },
+                    3000,
+                    function(){
+                        console.log('end');
+                    });
+
+                blue.animate.add('box2',
+                    {
+                        'left':500,
+                        width:200,
+                        height:100,
+                        opacity:0.2
+                    },
+                    4000,
+                    function(){
+                        console.log('end');
+                    });
+
+               blue.animate.add(document.body,function(dom,tween){
+                    dom.scrollTop = 1000*tween;
+                },2000,function(){
+                    console.log('1');
+                });
+            
+            // 事件委托
+            blue.delegate('uul','click','li',function(){
+                blue.css(this,'color','yellow');
+            });
+            // // 基于时间的运动框架  第二个参数可以是 函数 也可以是对象
+            // function animate(id,dict,duration,callback){
+              
+            //     var flag = true;  // 默认处理第二个参数为对象
+            //     if(typeof dict === 'function'){
+            //         flag = false;
+            //     }else if(typeof dict === 'object'){
+            //         flag = true;
+            //     }
+
+            //     var dom = blue.isString(id) ? blue.id(id) : id;
+            //     var timer = null;
+            //     duration = duration || 1000;  // 默认为执行时间为1s
+            //     var styles = null;
+
+            //     if(flag){
+            //         styles = adapter(dict);
+            //     }
+            //     var origin = +new Date();
+                
+            //     timer = setInterval(move,25);
+
+            //     // 动画过程
+            //     function move(){
+            //         var now = +new Date();
+            //         var tween = getTween(origin,now) / duration;
+            //         if(tween >=1 ){
+            //             stopAnimate(callback);
+                        
+            //         }
+            //         if(flag){
+            //             for(var i=0 ; i<styles.length ; i++){
+            //                 var item = styles[i];
+            //                 oneProperty(dom,item.attr,item.start,item.distance,tween); 
+            //             }
+            //         }else{
+            //             dict(dom,tween);
+            //         } 
+            //     }
+
+            //     // 适配器 adapter 转换生成styles 
+            //         //  var styles = [{
+            //         //         attr:'left',
+            //         //         start:0,
+            //         //         distance:400    
+            //         //     },
+            //         //     {
+            //         //         attr:'width',
+            //         //         start:0,
+            //         //         distance:200    
+            //         //     },
+            //         //     {
+            //         //         attr:'height',
+            //         //         start:0,
+            //         //         distance:200    
+            //         //     }];
+            //     function adapter(source){
+            //         var styles = [];
+            //         for(var key in source){
+            //             var start = parseFloat(blue.css(dom,key));
+            //             var distance = parseFloat(source[key]) - start;
+            //             styles.push({attr:key,start:start,distance:distance});
+            //         }
+            //         return styles;
+            //     }
+
+            //     // 对一个属性做动画
+            //     function oneProperty(dom,key,start,distance,tween){
+            //         if(key === 'opacity'){
+            //             dom.style[key] = tween * distance + start;
+            //             return;
+            //         }
+            //         dom.style[key] = tween * distance + start +'px';
+            //     }
+            //     // 停止定时器 动画
+            //     function stopAnimate(callback){
+            //         callback && callback();
+            //         clearInterval(timer);
+            //         timer = null;
+
+            //     }
+            //     // 获得已经经过的时间
+            //     function getTween(origin,now){
+            //         var pass = now - origin;
+            //         return pass;
+            //     }
+            // }
+           
+            
+
+        }(document,window);
+    </script>
+
+</body>
+
+</html>

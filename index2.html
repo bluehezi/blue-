@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #e92322;
+            margin: 5px;
+            display: none;
+        }
+        
+        li {
+            height: 30px;
+        }
+        
+     
+        .show {
+            display: block;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <input class='btn' type="button" value='显示' />
+    <input class='btn' type="button" value='隐藏' />
+
+    <script src='./blue$.js'></script>
+    <div id='div1'></div>
+    <div id='div2'></div>
+    <div id='div3'></div>
+    <input class='btn' type="button" value='绑定事件' />
+    <input class='btn' type="button" value='解绑事件' />
+
+    <ul>
+        <li class='lili ii'>1</li>
+        <li class='lili ii'>2</li>
+        <li class='lili ii'>3</li>
+        <li class='lili ii'>4</li>
+        <li class='lili ii'>5</li>
+    </ul>
+
+    <input class='btn' type="button" value="toggle" />
+    <script>
+        !function(window){
+
+            document.getElementsByClassName('btn')[0].addEventListener('click',function(e){
+                blue('div').show();
+            });
+            document.getElementsByClassName('btn')[1].addEventListener('click',function(e){
+                blue('div').hide();
+            });
+
+            document.getElementsByClassName('btn')[2].addEventListener('click',function(e){
+                // blue('div').on('click',click);
+                // blue('div').on('mouseenter',event);
+                // blue('div').on('mouseover',event);
+                // blue('div').on('mouseout',event);
+                blue('div').on('mouseenter',event);
+            });
+            document.getElementsByClassName('btn')[3].addEventListener('click',function(e){
+                // blue('div').un('click',click);
+                // blue('div').un('mouseenter',event);
+                // blue('div').un('mouseover',event);
+                // blue('div').un('mouseout',event);
+                blue('div').un('mouseover',event);
+
+            });
+
+            document.getElementsByClassName('btn')[4].addEventListener('click',function(e){
+                //  blue('div').toggleHS();
+                 blue('div').toggleClass('show').attr('data-emt','ooo').html('ooo');
+
+            });
+            blue('div').hover(function(){
+                console.log(1);
+            },function(){
+                console.log(2);
+            });
+            function event(){
+                blue(this).css('background-color','yellow');
+            }
+
+            blue('ul').delegate('click','li',function(event){
+                blue(this).css('color','yellow');
+
+            });
+
+            blue.animate.add('div1',{width:200},2000);
+            blue.animate.add('div2',{height:200},2000);
+            blue.animate.add('div3',{opacity:0.5},2000);
+            // blue('div').animate({width:200,height:200,opacity:0.5},3000,()=>{
+            //     console.log('end');
+            // });
+            
+        }(window);
+     
+
+    </script>
+
+
+</body>
+
+</html>
