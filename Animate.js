@@ -1,4 +1,4 @@
-
+// 运动框架 模块化
 function Animate() {
     this.interval = 25;
     this.queue = [];

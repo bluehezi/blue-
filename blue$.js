@@ -1,3 +1,5 @@
+// 模仿jquery的版本
+
 !function (window, document) {
 
     // 动画封装

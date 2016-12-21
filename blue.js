@@ -1,3 +1,4 @@
+// 函数式封装
 var blue = function () { };
 
 blue.prototype = {
